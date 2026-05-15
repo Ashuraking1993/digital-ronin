@@ -1,0 +1,346 @@
+.projects-section{
+  min-height:100vh;
+  background:black;
+
+  padding-top:120px;
+  padding-left:25px;
+  padding-right:25px;
+  padding-bottom:40px;
+}
+/* CARD */
+.project-card{
+  width:100%;
+  min-height:550px;
+
+  border:1px solid rgba(255,0,0,0.5);
+  border-radius:10px;
+
+  overflow:hidden;
+
+  display:flex;
+
+  background:rgba(0,0,0,0.9);
+
+  box-shadow:
+    0 0 25px rgba(255,0,0,0.15);
+
+  transition:0.4s;
+}
+
+.project-card:hover{
+  transform:translateY(-8px);
+
+  box-shadow:
+    0 0 40px rgba(255,0,0,0.4);
+}
+
+/* LEFT IMAGE */
+.project-image{
+  width:100%;
+  height:420px;
+
+  overflow:hidden;
+  margin-top: 30px;
+  border-radius:20px;
+}
+
+.project-image img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:0.5s;
+}
+
+.project-card:hover .project-image img{
+  transform:scale(1.05);
+}
+
+/* RIGHT SIDE */
+.project-info{
+  width:55%;
+
+  padding:70px 60px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* SMALL TITLE */
+.project-subtitle{
+  color:#ff0000;
+  font-size:1rem;
+  letter-spacing:6px;
+  margin-bottom:10px;
+}
+
+/* MAIN TITLE */
+.project-title{
+  font-size:5rem;
+  line-height:1;
+
+  color:white;
+
+  margin-bottom:25px;
+
+  text-shadow:
+    0 0 15px rgba(255,255,255,0.2);
+}
+
+/* DESCRIPTION */
+.project-description{
+  color:#9ca3af;
+
+  font-size:1.4rem;
+  line-height:1.8;
+
+  max-width:90%;
+
+  margin-bottom:30px;
+}
+
+/* TECH STACK */
+.tech-stack{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+
+  margin-bottom:40px;
+}
+
+.tech-badge{
+  border:1px solid #ff0000;
+
+  padding:8px 18px;
+
+  border-radius:10px;
+
+  color:white;
+
+  font-size:1rem;
+
+  transition:0.3s;
+}
+
+.tech-badge:hover{
+  background:#ff0000;
+
+  box-shadow:
+    0 0 15px #ff0000;
+}
+
+/* BUTTONS */
+.project-buttons{
+  display:flex;
+  gap:20px;
+}
+
+.project-btn{
+  padding:14px 28px;
+
+  border:none;
+
+  border-radius:12px;
+
+  font-size:1rem;
+
+  font-weight:bold;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+/* RED BUTTON */
+.project-btn.primary{
+  background:#ff0000;
+  color:white;
+}
+
+.project-btn.primary{
+
+  background:#ff0000;
+  color:white;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:0.4s;
+
+}
+
+.project-btn.primary:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 40px rgba(255,0,0,0.8);
+
+}
+
+/* EDGE LIGHT EFFECT */
+
+.project-btn.primary::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:12px;
+
+  padding:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff4d4d,
+      transparent
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+
+  opacity:0;
+
+  transition:0.4s;
+
+}
+
+.project-btn.primary:hover::before{
+
+  opacity:1;
+
+}
+
+/* WHITE BUTTON */
+.project-btn.secondary{
+
+  background:white;
+  color:black;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:0.4s;
+
+}
+
+.project-btn.secondary:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 0 10px white,
+    0 0 20px rgba(255,255,255,0.8),
+    0 0 40px rgba(255,255,255,0.4);
+
+}
+
+/* EDGE LIGHT EFFECT */
+
+.project-btn.secondary::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  border-radius:12px;
+
+  padding:2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      white,
+      transparent
+    );
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite:xor;
+
+  opacity:0;
+
+  transition:0.4s;
+
+}
+
+.project-btn.secondary:hover::before{
+
+  opacity:1;
+
+}
+
+/* SLIDESHOW */
+
+.project-slideshow{
+
+  width:100%;
+  height:180px;
+
+  margin-top:20px;
+
+  border:1px solid rgba(255,0,0,0.4);
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  position:relative;
+
+  box-shadow:
+    0 0 20px rgba(255,0,0,0.15);
+
+}
+
+.project-slideshow img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:1s;
+
+}
+
+/* OPTIONAL GLOW */
+
+.project-slideshow::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,0.5),
+      transparent
+    );
+
+}
