@@ -15,6 +15,15 @@ import garage10 from "../assets/garage10.png";
 import garage11 from "../assets/garage11.png";
 import garage12 from "../assets/garage12.png";
 import garage13 from "../assets/garage13.png";
+import pos1 from "../assets/pos1.png";
+import pos2 from "../assets/pos2.png";
+import pos3 from "../assets/pos3.png";
+import pos4 from "../assets/pos4.png";
+import pos5 from "../assets/pos5.png";
+import pos6 from "../assets/pos6.png";
+import pos7 from "../assets/pos7.png";
+import pos8 from "../assets/pos8.png";
+import pos9 from "../assets/pos9.png";
 
 function Projects() {
 
@@ -34,7 +43,20 @@ function Projects() {
     garage13
   ];
 
+const posImages = [
+  pos1,
+  pos2,
+  pos3,
+  pos4,
+  pos5,
+  pos6,
+  pos7,
+  pos8,
+  pos9
+];
+
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentPosSlide, setCurrentPosSlide] = useState(0);
 
   useEffect(() => {
 
@@ -51,6 +73,22 @@ function Projects() {
     return () => clearInterval(interval);
 
   }, [images.length]);
+
+  useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCurrentPosSlide((prev) =>
+      prev === posImages.length - 1
+        ? 0
+        : prev + 1
+    );
+
+  }, 3000);
+
+  return () => clearInterval(interval);
+
+}, [posImages.length]);
 
   return (
 
@@ -195,10 +233,151 @@ function Projects() {
           </div>
 
         </div>
+      
+      </div>
+
+      <div className="project-card reverse">
+
+  {/* LEFT SIDE */}
+  <div className="left-side">
+
+    <div className="project-image">
+
+      <img
+        src={pos1}
+        alt="POS System"
+      />
+
+    </div>
+
+    <div className="feature-carousel">
+
+      {posImages.map((img, index) => {
+
+        const position =
+          index === currentPosSlide
+            ? "active"
+            : index ===
+              (currentPosSlide - 1 + posImages.length) % posImages.length
+            ? "left"
+            : index ===
+              (currentPosSlide + 1) % posImages.length
+            ? "right"
+            : "hidden";
+
+          return (
+
+            <div
+              key={index}
+              className={`feature-card ${position}`}
+            >
+
+              <img
+                src={img}
+                alt=""
+              />
+
+            </div>
+
+          );
+
+        })}
+
+    </div>
+
+     <div className="pos-slide-dots">
+
+      {posImages.map((_, index) => (
+
+        <span
+          key={index}
+          className={`pos-dot ${
+            currentPosSlide === index
+              ? "active"
+              : ""
+          }`}
+          onClick={() =>
+            setCurrentPosSlide(index)
+          }
+        />
+
+      ))}
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div className="project-info">
+
+    <p className="project-subtitle">
+      FASTFOOD POINT OF SALE SYSTEM
+    </p>
+
+    <h1 className="project-title">
+      RHYZEN FASTFOOD POS
+    </h1>
+
+    <p className="project-description">
+      Modern ASP.NET Core MVC Point of Sale
+      and inventory management system with
+      transaction processing, inventory tracking,
+      receipt generation, sales reports,
+      and administrative controls.
+    </p>
+
+    <div className="tech-stack">
+
+      <span className="tech-badge">
+        C#
+      </span>
+
+      <span className="tech-badge">
+        ASP.NET CORE
+      </span>
+
+      <span className="tech-badge">
+        SQL SERVER
+      </span>
+
+      <span className="tech-badge">
+        MVC CORE
+      </span>
+
+    </div>
+
+    <div className="project-buttons">
+
+      <a
+        href="/RHYZEN FASTFOOD POS SYSTEM.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <button className="project-btn primary">
+          VIEW PROJECT
+        </button>
+      </a>
+
+      <a
+        href="https://github.com/Ashuraking1993/Rhyzen-FastFoodPOS"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <button className="project-btn secondary">
+          GITHUB
+        </button>
+      </a>
 
       </div>
 
-    </section>
+     
+
+    </div>
+   
+    </div>
+
+  
+  </section>
 
   );
 
