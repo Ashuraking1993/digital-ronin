@@ -27,6 +27,8 @@ import aiWaifu from "../assets/ai-waifu.mp4";
 import aboutLoading from "../assets/about-loading.mp4";
 import Sakura from "./Sakura";
 import sideKatana from "../assets/side-katana.mp4";
+import { Link } from "react-router-dom";
+
 
 import { Swiper, SwiperSlide }
 from "swiper/react";
@@ -435,13 +437,21 @@ useEffect(() => {
 
           <div className="hero-buttons">
 
-            <button className="primary-btn">
-              VIEW PROJECTS
-            </button>
+           <Link to="/projects">
+          <button className="primary-btn">
+            VIEW PROJECTS
+          </button>
+          </Link>
 
-            <button className="secondary-btn">
+             <a
+            href="/ASHURA KING RHYZEN KOKUBUN.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="secondary-btn primary">
               DOWNLOAD CV
-            </button>
+              </button>
+          </a>
 
           </div>
 
@@ -657,10 +667,10 @@ className="roninSwiper"
           
         </h3>
 
-        <p>
-          Crafting seamless digital
-          experiences from frontend
-          to backend.
+       <p>
+          Designing futuristic visuals
+          and immersive digital artwork
+          with creativity and innovation.
         </p>
 
         <a href="#">
@@ -685,9 +695,9 @@ className="roninSwiper"
         </h3>
 
         <p>
-          Crafting seamless digital
-          experiences from frontend
-          to backend.
+          Analyzing business processes
+          and transforming requirements
+          into efficient digital solutions.
         </p>
 
         <a href="#">
@@ -734,14 +744,14 @@ className="roninSwiper"
       <div className="service-content">
 
         <h3>
-          FULL STACK <br />
+          AI APP <br />
           DEVELOPER
         </h3>
 
         <p>
-          Crafting seamless digital
-          experiences from frontend
-          to backend.
+        Developing futuristic AI systems
+        focused on automation, analytics,
+        and seamless user experiences.
         </p>
 
         <a href="#">

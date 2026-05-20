@@ -25,6 +25,15 @@ import pos7 from "../assets/pos7.png";
 import pos8 from "../assets/pos8.png";
 import pos9 from "../assets/pos9.png";
 
+
+// IMPORTS AI sudy//
+
+import study1 from "../assets/study1.png";
+import study2 from "../assets/study2.png";
+import study3 from "../assets/study3.png";
+import study4 from "../assets/study4.png";
+import study5 from "../assets/study5.png";
+import study6 from "../assets/study6.png";
 function Projects() {
 
   const images = [
@@ -53,6 +62,17 @@ const posImages = [
   pos7,
   pos8,
   pos9
+];
+
+
+
+const studyImages = [
+  study1,
+  study2,
+  study3,
+  study4,
+  study5,
+  study6
 ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -89,6 +109,33 @@ const posImages = [
   return () => clearInterval(interval);
 
 }, [posImages.length]);
+
+// STATE
+
+const [currentStudySlide, setCurrentStudySlide] =
+  useState(0);
+
+// LEFT
+const prevStudySlide = () => {
+
+  setCurrentStudySlide((prev) =>
+    prev === 0
+      ? studyImages.length - 1
+      : prev - 1
+  );
+
+};
+
+// RIGHT
+const nextStudySlide = () => {
+
+  setCurrentStudySlide((prev) =>
+    prev === studyImages.length - 1
+      ? 0
+      : prev + 1
+  );
+
+};
 
   return (
 
@@ -370,12 +417,167 @@ const posImages = [
 
       </div>
 
-     
-
-    </div>
-   
+      </div>
+         
     </div>
 
+
+       
+
+    {/* ================= AI STUDY ASSISTANT ================= */}
+
+<div className="project-card">
+
+  {/* LEFT SIDE */}
+  <div className="study-left-side">
+
+    {/* MAIN IMAGE */}
+    <div className="study-main-image">
+
+      <img
+        src={studyImages[currentStudySlide]}
+        alt="AI Study Assistant"
+      />
+
+    </div>
+
+    {/* THUMBNAILS */}
+    <div className="study-thumb-wrapper">
+
+  {/* LEFT */}
+  <button
+    className="thumb-arrow"
+    onClick={prevStudySlide}
+  >
+    ❮
+  </button>
+
+  {/* THUMB CONTAINER */}
+  <div className="study-thumb-container">
+
+    <div
+      className="study-thumb-track"
+      style={{
+        transform: `translateX(-${
+          currentStudySlide * 155
+        }px)`
+      }}
+    >
+
+      {studyImages.map((img, index) => (
+
+        <div
+          key={index}
+          className={`study-card ${
+            currentStudySlide === index
+              ? "active"
+              : ""
+          }`}
+          onClick={() =>
+            setCurrentStudySlide(index)
+          }
+        >
+
+          <img
+            src={img}
+            alt=""
+          />
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+  {/* RIGHT */}
+  <button
+    className="thumb-arrow"
+    onClick={nextStudySlide}
+  >
+    ❯
+  </button>
+
+</div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+  <div className="study-project-info">
+
+    <p className="study-project-subtitle">
+      AI POWERED EDUCATION PLATFORM
+    </p>
+
+    <h1 className="study-project-title">
+      AI STUDY ASSISTANT
+    </h1>
+
+    <p className="study-project-description">
+
+      Futuristic AI-powered learning platform
+      designed to help students study smarter
+      through intelligent summaries,
+      AI-generated quizzes,
+      personalized learning analytics,
+      and real-time AI tutoring assistance.
+
+    </p>
+
+    {/* TECH STACK */}
+    <div className="study-tech-stack">
+
+      <span className="study-tech-badge">
+        REACT
+      </span>
+
+      <span className="study-tech-badge">
+        ASP.NET CORE
+      </span>
+
+      <span className="study-tech-badge">
+        OPENAI API
+      </span>
+
+      <span className="study-tech-badge">
+        NEON DB SERVER
+      </span>
+
+    </div>
+
+    {/* BUTTONS */}
+    <div className="study-project-buttons">
+
+          <a
+        href="https://rhyzen-ai-study.vercel.app/"
+        target="_blank"
+        rel="noreferrer"
+      >
+
+        <button className="study-btn primary">
+          VIEW PROJECT LIVE DEMO
+        </button>
+
+      </a>
+
+      <a
+        href="https://github.com/Ashuraking1993/rhyzen-ai-study"
+        target="_blank"
+        rel="noreferrer"
+      >
+
+        <button className="study-btn secondary">
+          GITHUB
+        </button>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
   
   </section>
 
