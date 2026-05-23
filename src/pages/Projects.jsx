@@ -137,6 +137,22 @@ const nextStudySlide = () => {
 
 };
 
+useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCurrentStudySlide((prev) =>
+      prev === studyImages.length - 1
+        ? 0
+        : prev + 1
+    );
+
+  }, 3000);
+
+  return () => clearInterval(interval);
+
+}, [studyImages.length]);
+
   return (
 
     <section className="projects-section">
@@ -149,10 +165,10 @@ const nextStudySlide = () => {
           {/* MAIN IMAGE */}
           <div className="project-image">
 
-            <img
-              src={garage1}
-              alt="Garage System"
-            />
+              <img
+            src={images[currentSlide]}
+            alt="Garage System"
+          />
 
           </div>
 
@@ -291,9 +307,9 @@ const nextStudySlide = () => {
     <div className="project-image">
 
       <img
-        src={pos1}
-        alt="POS System"
-      />
+          src={posImages[currentPosSlide]}
+          alt="POS System"
+        />
 
     </div>
 
