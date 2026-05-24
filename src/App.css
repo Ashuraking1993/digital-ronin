@@ -14,8 +14,8 @@
 body{
   background:
     linear-gradient(
-      rgba(0,0,0,.10),
-      rgba(0,0,0,.10)
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.65)
     ),
     url("/images/bg.jpg");
 

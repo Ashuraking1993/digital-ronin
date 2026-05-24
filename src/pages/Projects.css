@@ -742,3 +742,388 @@
   transform: scale(1.1);
 
 }
+
+
+
+/* ===================================== */
+/* SILKROAD PROJECT CARD */
+/* ===================================== */
+
+.sro-project-card{
+
+  display:flex;
+  gap:80px;
+
+  align-items:center;
+
+  margin:30px 0;
+
+  margin-top: 25px;
+
+  padding:50px;
+
+  border-radius:30px;
+
+  background:rgba(255,255,255,.03);
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,215,0,.12);
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+.sro-project-card::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(255,215,0,.08),
+      transparent 50%
+    );
+
+  pointer-events:none;
+}
+
+/* ===================================== */
+/* LEFT SIDE */
+/* ===================================== */
+
+.sro-left-side{
+
+  flex:1;
+
+  display:flex;
+
+  flex-direction:column;
+}
+
+.sro-main-image img{
+
+  width:120%;
+
+  max-width:900px;
+
+  height:420px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,215,0,.15);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+}
+
+/* ===================================== */
+/* THUMBNAILS */
+/* ===================================== */
+
+.sro-thumb-wrapper{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:15px;
+
+  margin-top:25px;
+}
+
+.sro-thumb-container{
+
+  width:500px;
+
+  overflow:hidden;
+}
+
+.sro-thumb-track{
+
+  display:flex;
+
+  gap:15px;
+
+  transition:.5s ease;
+}
+
+.sro-thumb{
+
+  min-width:140px;
+
+  height:90px;
+
+  overflow:hidden;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  border:2px solid transparent;
+
+  transition:.3s;
+}
+
+.sro-thumb img{
+
+  width:100%;
+
+  height:100%;
+
+  object-fit:cover;
+}
+
+.sro-thumb:hover{
+
+  transform:translateY(-4px);
+}
+
+.sro-thumb.active{
+
+  border:2px solid #ffd700;
+
+  box-shadow:
+    0 0 20px rgba(255,215,0,.5);
+}
+
+/* ===================================== */
+/* ARROWS */
+/* ===================================== */
+
+.sro-thumb-arrow{
+
+  width:45px;
+
+  height:45px;
+
+  border:none;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  color:white;
+
+  font-size:22px;
+
+  background:rgba(255,255,255,.05);
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,215,0,.15);
+
+  transition:.3s;
+}
+
+.sro-thumb-arrow:hover{
+
+  background:rgba(255,215,0,.15);
+
+  transform:scale(1.1);
+}
+
+/* ===================================== */
+/* RIGHT SIDE */
+/* ===================================== */
+
+.sro-project-info{
+
+  flex:1;
+  padding-left:70px;
+  color:white;
+}
+
+.sro-project-subtitle{
+
+  color:#d4af37;
+
+  letter-spacing:6px;
+
+  text-transform:uppercase;
+
+  font-family:'Orbitron',sans-serif;
+
+  margin-bottom:20px;
+}
+
+.sro-project-title{
+
+  font-size:clamp(3rem,6vw,5rem);
+
+  line-height:1;
+
+  margin-bottom:25px;
+
+  font-family:'Cinzel',serif;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #fff7d6,
+      #ffd86b,
+      #b8860b
+    );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+.sro-project-description{
+
+  color:rgba(255,255,255,.75);
+
+  font-size:18px;
+
+  line-height:1.9;
+
+  margin-bottom:35px;
+
+  max-width:650px;
+}
+
+/* ===================================== */
+/* TECH STACK */
+/* ===================================== */
+
+.sro-tech-stack{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+  margin-bottom:40px;
+}
+
+.sro-tech-stack span{
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  color:#fff;
+
+  font-size:14px;
+
+  letter-spacing:1px;
+
+  border:1px solid rgba(255,215,0,.2);
+
+  background:rgba(255,215,0,.08);
+}
+
+/* ===================================== */
+/* BUTTONS */
+/* ===================================== */
+
+.sro-project-buttons{
+
+  display:flex;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+}
+
+.sro-btn{
+
+  padding:16px 35px;
+
+  border:none;
+
+  border-radius:14px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  transition:.35s;
+}
+
+.sro-btn.primary{
+
+  background:
+    linear-gradient(
+      135deg,
+      #d4af37,
+      #ffd700
+    );
+
+  color:#111;
+}
+
+.sro-btn.secondary{
+
+  background:rgba(255,255,255,.05);
+
+  color:white;
+
+  border:1px solid rgba(255,215,0,.15);
+}
+
+.sro-btn:hover{
+
+  transform:
+    translateY(-3px)
+    scale(1.03);
+}
+
+.sro-project-buttons a{
+  text-decoration:none;
+}
+
+.sro-project-buttons a{
+  display:inline-block;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media(max-width:1100px){
+
+  .sro-project-card{
+
+    flex-direction:column;
+
+    gap:40px;
+  }
+
+  .sro-main-image img{
+
+    height:auto;
+  }
+
+  .sro-thumb-container{
+
+    width:100%;
+  }
+
+  .sro-project-title{
+
+    text-align:center;
+  }
+
+  .sro-project-description{
+
+    text-align:center;
+
+    margin:auto auto 35px;
+  }
+
+  .sro-tech-stack,
+  .sro-project-buttons{
+
+    justify-content:center;
+  }
+}

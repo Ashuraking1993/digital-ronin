@@ -34,6 +34,19 @@ import study3 from "../assets/study3.png";
 import study4 from "../assets/study4.png";
 import study5 from "../assets/study5.png";
 import study6 from "../assets/study6.png";
+
+
+// IMPORTS SRO Imags//
+
+
+
+import sro from "../assets/projects/sro.png";
+import sro1 from "../assets/projects/sro1.png";
+import sro2 from "../assets/projects/sro2.png";
+import sro3 from "../assets/projects/sro3.png";
+import sro4 from "../assets/projects/sro4.png";
+import sro5 from "../assets/projects/sro5.png";
+
 function Projects() {
 
   const images = [
@@ -73,6 +86,15 @@ const studyImages = [
   study4,
   study5,
   study6
+];
+
+const sroImages = [
+  sro,
+  sro1,
+  sro2,
+  sro3,
+  sro4,
+  sro5
 ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -152,6 +174,44 @@ useEffect(() => {
   return () => clearInterval(interval);
 
 }, [studyImages.length]);
+
+
+const [currentSroSlide, setCurrentSroSlide] =
+
+  useState(0);
+useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCurrentSroSlide(prev =>
+      (prev + 1) % sroImages.length
+    );
+
+  }, 4000);
+
+  return () => clearInterval(interval);
+
+}, [sroImages.length]);
+
+const nextSroSlide = () => {
+
+  setCurrentSroSlide(prev =>
+    prev === sroImages.length - 1
+      ? 0
+      : prev + 1
+  );
+
+};
+
+const prevSroSlide = () => {
+
+  setCurrentSroSlide(prev =>
+    prev === 0
+      ? sroImages.length - 1
+      : prev - 1
+  );
+
+};
 
   return (
 
@@ -565,7 +625,7 @@ useEffect(() => {
     {/* BUTTONS */}
     <div className="study-project-buttons">
 
-          <a
+        <a
         href="https://rhyzen-ai-study.vercel.app/"
         target="_blank"
         rel="noreferrer"
@@ -590,6 +650,126 @@ useEffect(() => {
       </a>
 
     </div>
+
+  </div>
+
+</div>
+
+
+  {/* ================= GAMING LANDING PAGE ================= */}
+
+<div className="sro-project-card">
+
+  <div className="sro-left-side">
+
+    <div className="sro-main-image">
+      <img
+        src={sroImages[currentSroSlide]}
+        alt="Silkroad Reborn"
+      />
+    </div>
+
+    <div className="sro-thumb-wrapper">
+
+      <button
+        className="sro-thumb-arrow"
+        onClick={prevSroSlide}
+      >
+        ❮
+      </button>
+
+      <div className="sro-thumb-container">
+
+        <div
+          className="sro-thumb-track"
+          style={{
+            transform: `translateX(-${currentSroSlide * 155}px)`
+          }}
+        >
+
+        {sroImages.map((img, index) => (
+
+          <div
+            key={index}
+            className={`sro-thumb ${
+              currentSroSlide === index
+                ? "active"
+                : ""
+            }`}
+            onClick={() =>
+              setCurrentSroSlide(index)
+            }
+          >
+
+            <img src={img} alt="" />
+
+          </div>
+
+        ))}
+
+        </div>
+
+      </div>
+
+      <button
+        className="sro-thumb-arrow"
+        onClick={nextSroSlide}
+      >
+        ❯
+      </button>
+
+    </div>
+
+  </div>
+
+  <div className="sro-project-info">
+
+    <p className="sro-project-subtitle">
+      GAMING WEBSITE PLATFORM
+    </p>
+
+    <h1 className="sro-project-title">
+      SILKROAD REBORN
+    </h1>
+
+    <p className="sro-project-description">
+      Modern Silkroad Online fully functional website built with
+      React, immersive animations, responsive layouts,
+      game showcases, event boards and premium UI/UX.
+    </p>
+
+    <div className="sro-tech-stack">
+
+      <span>REACT</span>
+      <span>FRAMER MOTION</span>
+      <span>CSS3</span>
+      <span>VERCEL</span>
+
+    </div>
+
+    <div className="sro-project-buttons">
+
+  <a
+    href="https://silkroad-reborn-landing.vercel.app"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <button className="sro-btn primary">
+      LIVE DEMO
+    </button>
+  </a>
+
+  <a
+    href="https://github.com/Ashuraking1993/silkroad-reborn-landing"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <button className="sro-btn secondary">
+      GITHUB
+    </button>
+  </a>
+
+</div>
 
   </div>
 
