@@ -15,6 +15,8 @@ import garage10 from "../assets/garage10.png";
 import garage11 from "../assets/garage11.png";
 import garage12 from "../assets/garage12.png";
 import garage13 from "../assets/garage13.png";
+
+
 import pos1 from "../assets/pos1.png";
 import pos2 from "../assets/pos2.png";
 import pos3 from "../assets/pos3.png";
@@ -46,6 +48,15 @@ import sro2 from "../assets/projects/sro2.png";
 import sro3 from "../assets/projects/sro3.png";
 import sro4 from "../assets/projects/sro4.png";
 import sro5 from "../assets/projects/sro5.png";
+
+
+import groceryPos1 from "../assets/grocerypos/pos1.png";
+import groceryPos2 from "../assets/grocerypos/pos2.png";
+import groceryPos3 from "../assets/grocerypos/pos3.png";
+import groceryPos4 from "../assets/grocerypos/pos4.png";
+import groceryPos5 from "../assets/grocerypos/pos5.png";
+import groceryPos6 from "../assets/grocerypos/pos6.png";
+import groceryPos7 from "../assets/grocerypos/pos7.png";
 
 function Projects() {
 
@@ -95,6 +106,16 @@ const sroImages = [
   sro3,
   sro4,
   sro5
+];
+
+const groceryPosImages = [
+  groceryPos1,
+  groceryPos2,
+  groceryPos3,
+  groceryPos4,
+  groceryPos5,
+  groceryPos6,
+  groceryPos7
 ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -212,6 +233,47 @@ const prevSroSlide = () => {
   );
 
 };
+const [
+  currentGroceryPosSlide,
+  setCurrentGroceryPosSlide
+] = useState(0);
+
+const prevGroceryPosSlide = () => {
+
+  setCurrentGroceryPosSlide((prev) =>
+    prev === 0
+      ? groceryPosImages.length - 1
+      : prev - 1
+  );
+
+};
+
+const nextGroceryPosSlide = () => {
+
+  setCurrentGroceryPosSlide((prev) =>
+    prev === groceryPosImages.length - 1
+      ? 0
+      : prev + 1
+  );
+
+};
+
+useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCurrentGroceryPosSlide((prev) =>
+      prev === groceryPosImages.length - 1
+        ? 0
+        : prev + 1
+    );
+
+  }, 3000);
+
+  return () => clearInterval(interval);
+
+}, []);
+
 
   return (
 
@@ -771,11 +833,187 @@ const prevSroSlide = () => {
 
 </div>
 
+ </div>
+
+</div>
+
+{/* ================= GROCERY POS PAGE ================= */}
+<div className="project-card">
+
+  {/* LEFT */}
+  <div className="grocerypos-left-side">
+
+    {/* MAIN IMAGE */}
+    <div className="grocerypos-main-image">
+
+      <img
+        src={
+          groceryPosImages[
+            currentGroceryPosSlide
+          ]
+        }
+        alt="Grocery POS"
+      />
+
+    </div>
+
+    {/* THUMBNAILS */}
+    <div className="grocerypos-thumb-wrapper">
+
+     <button
+        className="thumb-arrow"
+        onClick={prevGroceryPosSlide}
+      >
+        ❮
+      </button>
+
+      <div className="grocerypos-thumb-container">
+
+        <div
+          className="grocerypos-thumb-track"
+          style={{
+            transform:
+              `translateX(-${
+                currentGroceryPosSlide * 155
+              }px)`
+          }}
+        >
+
+          {groceryPosImages.map(
+            (img, index) => (
+
+            <div
+              key={index}
+              className={`grocerypos-card ${
+                currentGroceryPosSlide === index
+                  ? "active"
+                  : ""
+              }`}
+              onClick={() =>
+                setCurrentGroceryPosSlide(
+                  index
+                )
+              }
+            >
+
+              <img
+                src={img}
+                alt=""
+              />
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+       <button
+        className="thumb-arrow"
+        onClick={nextGroceryPosSlide}
+      >
+        ❯
+      </button>
+
+      
+
+    </div>
+
+  </div>
+
+  {/* RIGHT */}
+  <div className="grocerypos-project-info">
+
+    <p className="grocerypos-project-subtitle">
+      POINT OF SALE MANAGEMENT SYSTEM
+    </p>
+
+    <h1 className="grocerypos-project-title">
+      GROCERY POS
+    </h1>
+
+    <p className="grocerypos-project-description">
+
+      Modern Point of Sale and
+      Inventory Management System
+      featuring product inventory,
+      sales monitoring,
+      stock control,
+      reporting,
+      and authentication.
+
+      Built using ASP.NET Core MVC,
+      SQL Server,
+      Entity Framework,
+      Bootstrap,
+      JavaScript,
+      and C#.
+
+    </p>
+
+    <div className="grocerypos-tech-stack">
+
+      <span className="grocerypos-tech-badge">
+        ASP.NET CORE
+      </span>
+
+      <span className="grocerypos-tech-badge">
+        C#
+      </span>
+
+      <span className="grocerypos-tech-badge">
+        SQL SERVER
+      </span>
+
+      <span className="grocerypos-tech-badge">
+        ENTITY FRAMEWORK
+      </span>
+
+      <span className="grocerypos-tech-badge">
+        MVC
+      </span>
+
+
+    </div>
+
+    <div className="grocerypos-project-buttons">
+
+      <a
+        href="https://rhyzen-grocery-pos-demo.vercel.app"
+        target="_blank"
+        rel="noreferrer"
+      >
+
+        <button
+          className="grocerypos-btn primary"
+        >
+          VIEW PROJECT LIVE DEMO
+        </button>
+
+      </a>
+
+      <a
+        href="https://github.com/Ashuraking1993/Rhyzen-Grocery-POS_demo"
+        target="_blank"
+        rel="noreferrer"
+      >
+
+        <button
+          className="grocerypos-btn secondary"
+        >
+          GITHUB
+        </button>
+
+      </a>
+
+    </div>
+
   </div>
 
 </div>
   
-  </section>
+</section>
 
   );
 
