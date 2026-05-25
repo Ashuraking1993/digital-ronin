@@ -838,7 +838,7 @@ useEffect(() => {
 </div>
 
 {/* ================= GROCERY POS PAGE ================= */}
-<div className="project-card">
+<div className="projectpos-card">
 
   {/* LEFT */}
   <div className="grocerypos-left-side">
