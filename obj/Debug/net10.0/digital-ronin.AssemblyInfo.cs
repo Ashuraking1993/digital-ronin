@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("digital-ronin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0131fa222b71b5d7d74e57ff4825d44d8cf31935")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d535693f696d2471d3829dbc8f8231b242f377a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("digital-ronin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("digital-ronin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

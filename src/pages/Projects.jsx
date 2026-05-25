@@ -534,12 +534,12 @@ useEffect(() => {
     <div className="project-buttons">
 
       <a
-        href="/RHYZEN FASTFOOD POS SYSTEM.pdf"
+        href="https://ryzen-fastfood-demo.vercel.app/"
         target="_blank"
         rel="noreferrer"
       >
         <button className="project-btn primary">
-          VIEW PROJECT
+          VIEW PROJECT LIVE DEMO
         </button>
       </a>
 
@@ -861,7 +861,7 @@ useEffect(() => {
     <div className="grocerypos-thumb-wrapper">
 
      <button
-        className="thumb-arrow"
+        className="posthumb-arrow"
         onClick={prevGroceryPosSlide}
       >
         ❮
@@ -910,7 +910,7 @@ useEffect(() => {
       </div>
 
        <button
-        className="thumb-arrow"
+        className="posthumb-arrow"
         onClick={nextGroceryPosSlide}
       >
         ❯

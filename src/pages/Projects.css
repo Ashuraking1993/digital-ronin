@@ -1206,7 +1206,7 @@
 /* THUMB AREA */
 .grocerypos-thumb-container{
 
-  width:720px;
+  width:520px;
   overflow:hidden;
   margin-bottom: 50px;
 
@@ -1223,7 +1223,7 @@
 }
 .grocerypos-card{
 
-  min-width:145px;
+  min-width:125px;
   height:85px;
 
   overflow:hidden;
@@ -1248,9 +1248,6 @@
 
 }
 
-.grocerypos-thumb-container{
-  width:720px;
-}
 
 .grocerypos-card.active{
 
@@ -1383,10 +1380,10 @@
 }
 
 
-.thumb-arrow{
+.posthumb-arrow{
 
-  width:58px;
-  height:58px;
+  width:45px;
+  height:50px;
 
   border-radius:50%;
 
@@ -1407,10 +1404,12 @@
   display:flex;
   justify-content:center;
   align-items:center;
+  position:relative;
+  top:-20px;
 
 }
 
-.thumb-arrow:hover{
+.posthumb-arrow:hover{
 
   background:
   rgba(255,0,0,.15);
