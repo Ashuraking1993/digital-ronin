@@ -277,7 +277,7 @@ function Projects() {
           <p className="pj-desc">Enterprise Queue Management System designed for banks, hospitals, government offices, and service centers. Features ticket generation, kiosk interface, agent management, live display boards, branch management, queue monitoring, and role-based access.</p>
           <div className="pj-tech"><span>ASP.NET CORE</span><span>REACT</span><span>TYPESCRIPT</span><span>SIGNALR</span><span>SQL SERVER</span><span>EF CORE</span></div>
           <div className="pj-btns">
-            <a href="https://qsmart-demo.vercel.app" target="_blank" rel="noreferrer"><button className="pj-btn pj-primary">VIEW PROJECT LIVE DEMO</button></a>
+            <a href="https://qms-demo-omega.vercel.app/" target="_blank" rel="noreferrer"><button className="pj-btn pj-primary">VIEW PROJECT LIVE DEMO</button></a>
             <a href="https://github.com/Ashuraking1993/QSmart_System" target="_blank" rel="noreferrer"><button className="pj-btn pj-secondary">GITHUB</button></a>
           </div>
         </div>
